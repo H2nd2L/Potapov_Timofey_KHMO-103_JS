@@ -4,7 +4,7 @@ let testNotNan = inputFile;
 
 if (testNotNan){
     let testTxt = (inputFile.slice(-4) == '.txt');
-    
+
     if (testTxt){
         const fileSystem = require('fs');
         let input = fileSystem.readFileSync(inputFile, 'utf8');
@@ -28,15 +28,17 @@ if (testNotNan){
         if (alphPower>1){
             for (let i in alph)
                 entropy -= alph[i] * Math.log(alph[i]);
-            entropy /= Math.log(alphPower);   
-
+            entropy /= Math.log(alphPower);
         }
 
         console.log("Энтропия данного текста =", entropy);
         console.log("\nАлфавит с частотами");
         console.log(alph);
     }
-    
+
+    else{
+        console.log("ERROR");
+    }
 }
     
 else{
